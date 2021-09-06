@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    {% comment %} bootstrap css {% endcomment %}
+    {% block head %} {% endblock %}
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+    <div class="container-fluid">
+        <div class="row" style="height: 90px">
+            <div class="col-4">
+                <img style="height: 90px; float: left" src="{% static '/images/logo02.png' %}" alt="">
+                <h4 style="padding-top: 30px; color: #085394; text-transform: uppercase">unt virtual</h4>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4">
+                <img style="height: 90px; padding-left: 220px" src="{% static '/images/logo01.png' %}" alt="">
+            </div>
+        </div>
+
+        <div class="row" style="height: 50px">
+            <div class="col" style="background-color:  #085394"></div>
+        </div>
+
+        <div class="row" style="height: 570px;">
+            {% block content %} {% endblock %}
+        </div>
+
+        <div class="row" style="background-color: #f1c232;  height: 25px ; width: 100%  ; position: fixed;  bottom: 0; ">
+            <p style="text-transform: uppercase">universidad nacional de trujillo</p>
+        </div>
+
+
+    </div>
+
+
+    {% comment %} bootstrap js {% endcomment %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

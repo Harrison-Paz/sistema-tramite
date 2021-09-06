@@ -1,0 +1,56 @@
+{% extends 'layouts/layoutIndex.html' %}
+{% load static %}
+
+    {% block head %}
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'sidebar/css/style.css' %}">
+     {% endblock %}
+
+    {% block sidebar %}
+    <div class="wrapper d-flex align-items-stretch" style="margin: auto; padding: 0 0;">
+        <nav id="sidebar" class="active" style="background-color: #eeeeee; margin: 0 0;">
+            <div style="display: flex">
+                <button type="button" id="sidebarCollapse"  style="border: none; height: 25px;width: 30px; margin: 5px 0;">
+                    <i class="bi bi-list" style="font-size:1.5rem; padding: 0"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+                <h1><a style="color: #085394; font-size: 21px; padding: 10px 0; font-weight: 900;" href="index.html" class="logo" >UNT</a></h1>
+                <h1 style="color: #085394; font-size: 21px; font-weight: 900; padding: 10px 10px" class="footer">Virtual</h1>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <li class="active" style="margin-top: 5px; background-color: white">
+                    <a style="color: #085394" href="{% url 'home' %}"><span class="fa fa-home"></span> Home</a>
+                </li>
+                <li style="margin-top: 5px; background-color: white">
+                    <a style="color: #085394" href="#"><span class="fa fa-user"></span> About</a>
+                </li>
+                <li style="margin-top: 5px; background-color: white">
+                    <a style="color: #085394" href="#"><span class="fa fa-sticky-note"></span> Blog</a>
+                </li>
+                <li style="margin-top: 5px; background-color: white">
+                    <a style="color: #085394" href="{% url 'docs_index' %}"><span class="fa fa-cogs"></span> Tramites</a>
+                </li>
+                <li style="margin-top: 5px; background-color: white">
+                    <a style="color: #085394" href="#"><span class="fa fa-paper-plane"></span> Contacts</a>
+                </li>
+                <li style="margin-top: 5px; background-color: white">
+                    <a style="color: #085394" href="#"><span class="fa fa-paper-plane"></span> Contacts</a>
+                </li>
+            </ul>
+
+
+    	</nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5" style="height: 100px" >
+            {% block content %}  {% endblock %}
+        </div>
+      </div>
+
+
+    <script src="{% static 'sidebar/js/jquery.min.js' %}"></script>
+    <script src="{% static 'sidebar/js/popper.js' %}"></script>
+    <script src="{% static 'sidebar/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'sidebar/js/main.js' %}"></script>
+{% endblock %}

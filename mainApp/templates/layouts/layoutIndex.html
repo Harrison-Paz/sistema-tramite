@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    {% comment %} bootstrap css {% endcomment %}
+    {% block head %} {% endblock %}
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'sidebar/css/style.css' %}">
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" style="height: 80px">
+            <div class="col-4">
+                <img style="height: 100px; margin-top: -14px" src="{% static '/images/logo01.png' %}" alt="">
+            </div>
+            <div class="col-4"></div>
+            <div class="col-3" style="padding-left: 100px;margin-top: 15px">
+                <a href="" style="margin-right: 1rem"><i class="bi bi-youtube" style="font-size: 2rem; color: #1a1e21"></i></a>
+                <a href="" style="margin-right: 1rem"><i class="bi bi-twitter" style="font-size: 2rem; color: #1a1e21"></i></a>
+                <a href="" style="margin-right: 1rem"><i class="bi bi-google" style="font-size: 2rem; color: #1a1e21"></i></a>
+                <a href="" style="margin-right: 1rem"><i class="bi bi-facebook" style="font-size: 2rem; color: #1a1e21"></i></a>
+            </div>
+            <div class="col-1" style="margin-top: 10px; padding-left: 30px">
+                <a href="" style="margin-right: 1rem"><i class="bi bi-door-open-fill" style="font-size: 2.5rem; color: #085394"></i></a>
+            </div>
+
+        </div>
+
+        <div class="row" style="height: 50px;background-color: #085394">
+            <div class="col-9" style=""></div>
+            <div class="col-3" style="display: flex">
+                <i class="bi bi-person-circle" style="font-size: 2rem; color: white"></i>
+                <h5 style="margin: auto 10px ; color: white">Estudiante</h5>
+                <h1 style="color: white; margin: -5px 10px 0">|</h1>
+                <h6 style="margin: auto 10px ; color: white">Codigo: 1012301119</h6>
+            </div>
+        </div>
+
+        <div class="row" style="height: 570px;">
+
+            {% comment %} sidebar {% endcomment %}
+            {% block sidebar %}
+
+            {% endblock %}
+
+        </div>
+
+            <div class="row" style="background-color: #f1c232;  height: 25px ; width: 100%  ; position: fixed;  bottom: 0; ">
+                <p style="color: white; text-align: center">
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Universidad Nacional de Trujillo <i class="icon-heart" aria-hidden="true"></i>
+                </p>
+            </div>
+
+    </div>
+
+
+    {% comment %} bootstrap js {% endcomment %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
