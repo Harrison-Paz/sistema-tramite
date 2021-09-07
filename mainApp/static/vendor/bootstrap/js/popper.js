@@ -158,7 +158,7 @@ function getParentNode(element) {
  */
 function getScrollParent(element) {
   // Return body, `getScroll` will take care to get the correct `scrollTop` from it
-  if (!element || ['HTML', 'BODY', '#document'].indexOf(element.nodeName) !== -1) {
+  if (!element || ['HTML', 'BODY', '#main'].indexOf(element.nodeName) !== -1) {
     return window.document.body;
   }
 
@@ -211,7 +211,7 @@ function isOffsetContainer(element) {
 }
 
 /**
- * Finds the root node (document, shadowDOM root) of the given element
+ * Finds the root node (main, shadowDOM root) of the given element
  * @method
  * @memberof Popper.Utils
  * @argument {Element} node
@@ -250,7 +250,7 @@ function findCommonOffsetParent(element1, element2) {
   range.setEnd(end, 0);
   var commonAncestorContainer = range.commonAncestorContainer;
 
-  // Both nodes are inside #document
+  // Both nodes are inside #main
 
   if (element1 !== commonAncestorContainer && element2 !== commonAncestorContainer || start.contains(end)) {
     if (isOffsetContainer(commonAncestorContainer)) {

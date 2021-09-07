@@ -1,0 +1,57 @@
+{% extends 'layouts/layoutTramite.html' %}
+{% load static %}
+{% block contenido %}
+    <div class="col">
+        <div class="card" style="width: auto;">
+          <div class="card-body">
+            <div class="card border-dark mb-3" style="width: auto;">
+                <div class="card-header" style="height: 50px; padding: 0 20px"><a href="javascript:history.go(-1)"><i class="bi bi-arrow-left-circle-fill" style="font-size: 2rem;"></i></a><span style="padding-left: 200px; padding-top: 10px ;color: #2b78e4; text-transform: uppercase">Elija el tipo de documento que va a registrar</span></div>
+                    <div class="card-body text-dark">
+                          <table class="table">
+                              <tbody>
+                                {% for register in registers %}
+                                <tr>
+                                 <td>
+                                    <a href="{% url 'document' register.id %}">{{ register.code }}  <i class=" bi bi-file-zip-fill" style="color: #f1c232"></i>  {{ register.description }}</a>
+
+                                 </td>
+                                </tr>
+                                {% endfor %}
+                              </tbody>
+                          </table>
+
+                    <div class="row mt-3 justify-content-center">
+                        <nav>
+                            <ul class="pagination">
+                                {% if register.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=1">Primera</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ register.previous_page_number }}">&laquo;</a>
+                                    </li>
+                                {% endif %}
+
+                                {% for pagina in paginas %}
+                                    <li class="page-item{% if pagina_action == page %} active{%endif%}">
+                                        <a class="page-link" href="?page={{ pagina }}">{{ pagina }}</a>
+                                    </li>
+                                {% endfor %}
+
+                                {% if register.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ register.next_page_number }}">&laquo;</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ register.paginator.num_page }}">Ultima</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+               </div>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}

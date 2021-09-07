@@ -1,4 +1,4 @@
-{% extends 'layouts/index.html' %}
+{% extends 'layouts/layoutSidebar.html' %}
 {% load static %}
 {% block content %}
     <div class="container-fluid p-0">
@@ -7,9 +7,9 @@
             <div class="col-3">
                <div class="row" style="margin-bottom: 10px">
                    <div class="col">
-                       <div class="card" style="width: 18rem;">
+                       <div class="card" style="width: 18rem; background-color: #eeeeee">
                           <div class="card-body">
-                              <a href="#" style="display: flex"><i class="bi bi-folder-plus" style="font-size: 2rem"></i><h6 class="card-subtitle mb-2 text-muted" style="padding-left: 10px; padding-top: 30px">Nuevo registro</h6></a>
+                              <a href="{% url 'lista_registro' %}" style="display: flex"><i class="bi bi-folder-plus" style="font-size: 2rem"></i><h6 class="card-subtitle mb-2 text-muted" style="padding-left: 10px; padding-top: 30px">Nuevo registro</h6></a>
                               <a href="#" style="display: flex"><i class="bi bi-envelope-open" style="font-size: 2rem"></i><h6 class="card-subtitle mb-2 text-muted" style="padding-left: 10px; padding-top: 30px">Bandeja de entrada</h6></a>
                           </div>
                         </div>
@@ -17,32 +17,32 @@
                </div>
                <div class="row">
                    <div class="col">
-                       <div class="card" style="width: 18rem;">
+                       <div class="card" style="width: 18rem; background-color: #eeeeee">
                           <div class="card-body">
                             <h6 class="card-subtitle mb-2 text-muted text-center">Estado de documento</h6>
                               <div class="div" style="display: flex">
-                                  <i class="bi bi-archive-fill" style="color: #d39e00; font-size: 1.5rem"></i>
+                                  <i class="bi bi-archive-fill" style="color: #ffffff; font-size: 1.5rem"></i>
                                   <p style="margin-top: 10px; padding-left: 10px">Borrador</p>
                               </div>
                               <div class="div" style="display: flex">
                                   <i class="bi bi-archive-fill" style="color: #d39e00; font-size: 1.5rem"></i>
-                                  <p style="margin-top: 10px; padding-left: 10px">Borrador</p>
+                                  <p style="margin-top: 10px; padding-left: 10px">En Evaluacion</p>
                               </div>
                               <div class="div" style="display: flex">
-                                  <i class="bi bi-archive-fill" style="color: #d39e00; font-size: 1.5rem"></i>
-                                  <p style="margin-top: 10px; padding-left: 10px">Borrador</p>
+                                  <i class="bi bi-archive-fill" style="color: #ffff00; font-size: 1.5rem"></i>
+                                  <p style="margin-top: 10px; padding-left: 10px">En Tramite</p>
                               </div>
                               <div class="div" style="display: flex">
-                                  <i class="bi bi-archive-fill" style="color: #d39e00; font-size: 1.5rem"></i>
-                                  <p style="margin-top: 10px; padding-left: 10px">Borrador</p>
+                                  <i class="bi bi-archive-fill" style="color: #2b78e4; font-size: 1.5rem"></i>
+                                  <p style="margin-top: 10px; padding-left: 10px">Completo</p>
                               </div>
                               <div class="div" style="display: flex">
-                                  <i class="bi bi-archive-fill" style="color: #d39e00; font-size: 1.5rem"></i>
-                                  <p style="margin-top: 10px; padding-left: 10px">Borrador</p>
+                                  <i class="bi bi-archive-fill" style="color: #009e0f; font-size: 1.5rem"></i>
+                                  <p style="margin-top: 10px; padding-left: 10px">Atendido</p>
                               </div>
                               <div class="div" style="display: flex">
-                                  <i class="bi bi-archive-fill" style="color: #d39e00; font-size: 1.5rem"></i>
-                                  <p style="margin-top: 10px; padding-left: 10px">Borrador</p>
+                                  <i class="bi bi-archive-fill" style="color: #cf2a27; font-size: 1.5rem"></i>
+                                  <p style="margin-top: 10px; padding-left: 10px">Observado</p>
                               </div>
                           </div>
                         </div>

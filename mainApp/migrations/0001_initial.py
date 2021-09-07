@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('description', models.TextField()),
-                ('document', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='mainApp.document')),
+                ('main', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='mainApp.main')),
                 ('requirement', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='mainApp.requirement')),
             ],
         ),
@@ -71,7 +71,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.AddField(
-            model_name='document',
+            model_name='main',
             name='register',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='mainApp.register'),
         ),
