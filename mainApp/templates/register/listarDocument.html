@@ -12,7 +12,7 @@
                                         {% for document in documents %}
                                         <tr>
                                          <td>
-                                            <a href="">{{ document.register.code }} - {{ document.code }}  <i class=" bi bi-file-zip-fill" style="color: #f1c232"></i>  {{ document.description }}</a>
+                                            <a href="{% url 'tramite-doc' document.id %}">{{ document.register.code }} - {{ document.code }}  <i class=" bi bi-file-zip-fill" style="color: #f1c232"></i>  {{ document.description }}</a>
 
                                          </td>
                                         </tr>

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.db.models import Q
 
 from mainApp import models
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 
 
@@ -56,4 +56,14 @@ def listDocument(request, id):
         'paginaActual': paginaActual,
     }
     return render(request, "register/listarDocument.html", context)
+
+def tramite(request, id):
+    document = models.Document.objects.get(id=id)
+    requiriment = models.Type_requirement.objects.filter(document_id= id)
+    context = {
+        'document': document,
+        'requiriments': requiriment,
+    }
+    return render(request, "register/tramite.html", context)
+
 

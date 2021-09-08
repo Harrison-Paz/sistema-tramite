@@ -1,0 +1,71 @@
+{% extends 'layouts/layoutTramite.html' %}
+{% load static %}
+{% block contenido %}
+    <div class="col">
+        <div class="card" style="width: auto;">
+          <div class="card-body">
+            <div class="card border-dark mb-3" style="width: auto;">
+                <div class="card-header" style="height: 50px; padding: 0 20px">...</div>
+                <div class="card-body text-dark">
+
+                    <form>
+                      <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Usuario</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputEmail3">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Asunto</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputEmail3">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Estudios</label>
+                        <div class="col-sm-4">
+                          <input type="email" class="form-control" id="inputEmail3">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Numero</label>
+                        <div class="col-sm-3">
+                          <input type="email" class="form-control" id="inputEmail3">
+                        </div>
+                      </div>
+
+                        <br>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Comentarios</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                      </div>
+                    </form>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Requisito</th>
+                              <th scope="col">Tipo</th>
+                              <th scope="col">Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for requiriment in requiriments %}
+                            <tr>
+                                <td>{{ requiriment.requirement.id }}</td>
+                                <td>{{ requiriment.requirement.description }}</td>
+                                <td>{{ requiriment.description }}</td>
+                                <td>S/ {{ requiriment.requirement.cost }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}
